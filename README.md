@@ -447,8 +447,8 @@ www            IN      A       192.168.56.26
 ```
 - После внесения данных изменений, изменяем значение serial (добавлем +1 к значению 2711201007) и перезапускаем named: systemctl restart named
 
-- Создание новой зоны и добавление в неё записей **с помощью Ansible**. Для создания зоны и добавления в неё записей, нужно добавить зону в файл /etc/named.conf на хостах ns01 [master-named.conf](master-named2.conf) и ns02 [slave-named.conf ](slave-named2.conf), а также создать файл [named.newdns.lab](named.dns.lab), которые будут копироваться на сервер ns01 и ns02 через playbook.
-- Добавить в модуль copy файл named.newdns.lab [playbook](playbook2.yml)
+- Создание новой зоны и добавление в неё записей **с помощью Ansible**. Для создания зоны и добавления в неё записей, нужно добавить зону в файл /etc/named.conf на хостах ns01 [master-named.conf](master-named_2.conf) и ns02 [slave-named.conf ](slave-named_2.conf), а также создать файл [named.newdns.lab](named.dns.lab), которые будут копироваться на сервер ns01 и ns02 через playbook.
+- Добавить в модуль copy файл named.newdns.lab [playbook](playbook_2.yml)
 
 ```yml
 - name: copy zones
