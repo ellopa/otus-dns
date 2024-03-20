@@ -587,19 +587,19 @@ web1            IN      A       192.168.56.25
 - Внести изменения в файл /etc/named.conf на сервере ns02. Файл будет похож на файл для ns01, только в настройках будет указание забирать информацию с сервера ns01 и указан тип slave. Итоговый файл для ns02 [/etc/named.conf](slave-named.conf)
 
 >- Так как файлы с конфигурациями получаются достаточно большими — возрастает вероятность сделать ошибку. При их правке можно воспользоваться утилитой **named-checkconf**. Она укажет в каких строчках есть ошибки. Использование данной утилиты рекомендуется после изменения настроек на DNS-сервере.
-> named-checkconf /etc/named.conf
-> named-checkconf -t /var/named/chroot /etc/named.conf 
-
+```
+named-checkconf /etc/named.conf
+named-checkconf -t /var/named/chroot /etc/named.conf 
+```
 - После внесения данных изменений можно перезапустить (по очереди) службу named на серверах ns01 и ns02.
 
 - Проверка работы Split-DNS с хостов client и client2. Для проверки можно использовать утилиту ping:
-
 ```bash
 ping www.newdns.lab
 ping web1.dns.lab
 ping web2.dns.lab
 ```
-![scr_dns_dz_1.png](/scr_dns_dz_1.png)
+<img src="https://github.com/ellopa/otus-dns/blob/main/scr_dns_dz_1.png" width=50% height=50%>
 >- **На хосте мы видим, что client1 видит обе зоны (dns.lab и newdns.lab), однако информацию о хосте web2.dns.lab он получить не может.**
 
 ![scr_dns_dz_2.png](/scr_dns_dz_2.png)
