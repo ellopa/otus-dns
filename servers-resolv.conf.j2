@@ -1,0 +1,15 @@
+domain dns.lab
+search dns.lab
+#Если имя сервера ns02, то указываем nameserver 192.168.56.21
+{% if ansible_hostname == 'ns02' %}
+nameserver 192.168.56.21
+{% endif %}
+#Если имя сервера ns01, то указываем nameserver 192.168.56.20
+{% if ansible_hostname == 'ns01' %}
+nameserver 192.168.56.20
+{% endif %}
+#Если имя сервера ns01, то указываем nameserver 192.168.56.20
+{% if (ansible_hostname == 'client1' or ansible_hostname == 'client2') %}
+nameserver 192.168.56.20
+nameserver 192.168.56.21
+{% endif %}
