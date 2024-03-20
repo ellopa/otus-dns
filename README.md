@@ -546,7 +546,7 @@ acl client2 { !key client1-key; key client2-key; 192.168.56.26; };
 - В данном блоке access листов мы выделяем 2 блока:
 
 - client1 имеет адрес 192.168.56.25, использует client1-key и не использует client2-key
-- client2 имеет адрес 192ю168.56.26, использует clinet2-key и не использует client1-key
+- client2 имеет адрес 192.168.56.26, использует clinet2-key и не использует client1-key
 
 - Описание ключей и access листов будет одинаковое для master и slave сервера.
 
