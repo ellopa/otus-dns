@@ -602,11 +602,11 @@ ping web2.dns.lab
 <img src="https://github.com/ellopa/otus-dns/blob/main/scr_dns_dz_1.png" width=50% height=50%>
 >- **На хосте мы видим, что client1 видит обе зоны (dns.lab и newdns.lab), однако информацию о хосте web2.dns.lab он получить не может.**
 
-![scr_dns_dz_2.png](/scr_dns_dz_2.png)
+<img src="https://github.com/ellopa/otus-dns/blob/main/scr_dns_dz_2.png" width=50% height=50%>
 >- **client2 видит всю зону dns.lab и не видит зону newdns.lab**
 
 - Для того, чтобы проверить что master и slave сервера отдают одинаковую информацию, в файле /etc/resolv.conf можно удалить на время nameserver 192.168.50.20 и попробовать выполнить все те же проверки. Результат должен быть идентичный. 
-![scr_dns_dz_3.png](/scr_dns_dz_3.png)
+<img src="https://github.com/ellopa/otus-dns/blob/main/scr_dns_dz_3.png" width=50% height=50%>
 
 ### Настройка Split-DNS c помощью Ansible
 
